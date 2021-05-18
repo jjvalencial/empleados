@@ -58,8 +58,8 @@ public class EmpleadoRestController {
 	
 	
 	@PostMapping("/calcular/{id}/{mes}/{anio}")
-	public Double calcularSalario(@PathVariable  Long id, @PathVariable int mes,@PathVariable int anio) {
-		return iEmpleadoService.calcularSalarioEmpleado(id, mes, anio);
+	public Double calcularSalario(Long id, int mes, int anio, Double salario) {
+		return iEmpleadoService.calcularSalarioEmpleado(id, mes, anio, salario);
 	}
 	
 

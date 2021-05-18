@@ -9,7 +9,7 @@ public interface IEmpleadoService {
 	public Empleado save(Empleado empleado);
 	public Empleado findById(Long id);
 	public void delete(Long id);
-	public Double calcularSalarioEmpleado(Long id, int mes, int anio);
-	
+	public Double calcularSalarioEmpleado(Long id, int mes, int anio, Double salario);
+	public List<Empleado>listar();
 
 }

@@ -18,7 +18,7 @@ public class EmpleadoServiceImpl implements IEmpleadoService{
 	@Override
 	@Transactional(readOnly = true)
 	public List<Empleado> findAll() {
-		return (List<Empleado>) iEmpleadoDao.listar();
+		return (List<Empleado>) iEmpleadoDao.findAll();
 	}
 
 	@Override
@@ -46,12 +46,12 @@ public class EmpleadoServiceImpl implements IEmpleadoService{
 	}
 
 	@Override
-	public Double calcularSalarioEmpleado(Long id, int mes, int anio) {
+	public Double calcularSalarioEmpleado(Long id, int mes, int anio, Double salario) {
 		
 		if(id==null || mes<=0 || anio<=0) {
 			throw new BadRequestExceptions("El id, mes y anio son requeridos para el consumo del servicio");
 		}
-		return iEmpleadoDao.calcularSalarioEmpleado(id, mes, anio);
+		return iEmpleadoDao.calcularSalarioEmpleado(id, mes, anio, salario);
 	}
 
 	public void validarCampos(Empleado empleado) {
@@ -69,7 +69,6 @@ public class EmpleadoServiceImpl implements IEmpleadoService{
 		}
 	}
 
-	@Override
 	public List<Empleado> listar() {
 		// TODO Auto-generated method stub
 		return null;
